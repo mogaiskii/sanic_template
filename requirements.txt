@@ -3,3 +3,5 @@ marshmallow~=3.12.1
 mypy~=0.812
 sanic~=20.12.3
 SQLAlchemy~=1.4.17
+PyJWT~=2.1.0
+asyncpg~=0.23.0
