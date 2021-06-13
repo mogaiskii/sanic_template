@@ -1,7 +1,9 @@
-goodconf~=2.0.0
 marshmallow~=3.12.1
 mypy~=0.812
 sanic~=20.12.3
 SQLAlchemy~=1.4.17
 PyJWT~=2.1.0
 asyncpg~=0.23.0
+pydantic~=1.8.2
+structlog~=21.1.0
+alembic~=1.6.5
