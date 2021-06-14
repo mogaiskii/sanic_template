@@ -7,3 +7,4 @@ asyncpg~=0.23.0
 pydantic~=1.8.2
 structlog~=21.1.0
 alembic~=1.6.5
+python-dotenv~=0.17.1

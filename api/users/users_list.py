@@ -1,9 +1,6 @@
 from marshmallow import fields, Schema
 
-
-class ResponseUser(Schema):
-    id = fields.Integer()
-    login = fields.String()
+from api.users.base import ResponseUser
 
 
 class ResponseUsers(Schema):
