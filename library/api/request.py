@@ -4,6 +4,7 @@ from marshmallow import Schema
 
 
 class RequestSchema(Schema):
+
     def get_object(self, data):
         load_data = self.load(data)
 
@@ -12,3 +13,6 @@ class RequestSchema(Schema):
             setattr(obj, k, v)
 
         return obj
+
+    def load_from(self, **kwargs):
+        return self.load(kwargs)

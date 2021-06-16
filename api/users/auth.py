@@ -1,7 +1,7 @@
-from marshmallow import fields, Schema
+from marshmallow import fields
 
 from api.users.base import ResponseUser
-from library.api import RequestSchema
+from library.api import RequestSchema, ResponseSchema
 
 
 class RequestAuth(RequestSchema):
@@ -9,12 +9,12 @@ class RequestAuth(RequestSchema):
     password = fields.String(required=True, allow_none=False)
 
 
-class ResponseTokens(Schema):
+class ResponseTokens(ResponseSchema):
     auth_token = fields.String()
     refresh_token = fields.String()
     expire_at = fields.DateTime()
 
 
-class ResponseAuth(Schema):
+class ResponseAuth(ResponseSchema):
     user = fields.Nested(ResponseUser)
     tokens = fields.Nested(ResponseTokens)

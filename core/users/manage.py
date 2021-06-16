@@ -1,5 +1,5 @@
 from db.models import User
-from library.auth.hash import get_password_hash
+from library.auth import get_password_hash, generate_user_tokens
 from library.db.manager import Manager
 
 
@@ -18,3 +18,9 @@ class UsersManager(Manager):
         password_hash = get_password_hash(self._settings.PASSWORD_SALT, password)
 
         return await self.get_exact_one(User.login==login, User.password_hash==password_hash)
+
+    def create_tokens(self, user):
+        tokens = generate_user_tokens(
+            user.id, self._settings.JWT_SECRET, self._settings.TOKEN_LIFESPAN_SEC, self._settings.REFRESH_LIFESPAN_SEC
+        )
+        return tokens
